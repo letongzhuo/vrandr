@@ -7,7 +7,19 @@ built with [Ratatui](https://github.com/ratatui-org/ratatui) on top of
 `vrandr` lets you quickly rearrange your displays: pick an output, stage
 the changes you want, press `a` to apply them all in one shot, or `W` to
 save the current layout as a named profile and `T` to restore it later.
-![alt text](./examples/snapshot.png)
+
+```
+┌────────────────────────────────────────────────────────────┐
+│  Outputs                               Modes              │
+│  > eDP-1 * 1920x1080 +                 1920x1080  60.00Hz  │
+│    HDMI-1  1920x1080 (staged)           1920x1080  59.94Hz  │
+│    DP-1    off                         1680x1050  59.95Hz  │
+├────────────────────────────────────────────────────────────┤
+│  Status: eDP-1 selected, 1 pending op, [?] help            │
+│  Preview: xrandr --output HDMI-1 --mode 1920x1080 ...      │
+└────────────────────────────────────────────────────────────┘
+```
+
 The `+` next to an output's resolution means pending changes have been
 staged. The bottom pane always shows the exact `xrandr` command that will
 run.
@@ -19,12 +31,6 @@ run.
 - Rust 1.70+ (edition 2021)
 
 ## Install
-
-### From AUR
-
-```sh
-yay -S vrandr
-```
 
 ### From source
 
